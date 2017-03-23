@@ -105,28 +105,36 @@ class Ps_Livetranslation extends Module
         $output .= '</div>';
 
         if ($this->languageIsInstalled) {
-            $output .= '<h4>'.$this->trans('Translate PrestaShop using the live translation module:', array(), 'Admin.Livetranslation.Admin').'</h4>';
+            $output .= '<h4>'.$this->trans('How to proceed', array(), 'Modules.Livetranslation.Admin').'</h4>';
+
+            $output .= '<ol>
+                <li>'.$this->trans('Log in to your [1]Crowdin account[/1]', array(
+                    '[1]' => '<a href="https://crowdin.com/project/prestashop-official" target="_blank">',
+                    '[/1]' => '</a>',
+                ), 'Modules.Livetranslation.Admin').'</li>
+                <li>'.$this->trans('Translate PrestaShop using the live translation module', array(), 'Modules.Livetranslation.Admin').'</li>
+            </ol>';
 
             $output .= '<form class="form-horizontal"><div class="form-group">
-                <label class="control-label col-lg-1">'.$this->trans('Back office', array(), 'Admin.Livetranslation.Admin').'</label>
+                <label class="control-label col-lg-1">'.$this->trans('Back office', array(), 'Modules.Livetranslation.Admin').'</label>
                 <div class="col-lg-4">
                     <a class="btn btn-primary btn-sm" 
                         href="'.$this->context->link->getAdminLink('AdminModules', true, null, array('configure' => $this->name, 'live_translation' => 1)).'" 
-                        title="'.$this->trans('Translate', array(), 'Admin.Livetranslation.Admin').'">' .
-                        $this->trans('Translate', array(), 'Admin.Livetranslation.Admin') .
+                        title="'.$this->trans('Translate', array(), 'Modules.Livetranslation.Admin').'">' .
+                        $this->trans('Translate', array(), 'Modules.Livetranslation.Admin') .
                     '</a>
                 </div>
             </div>';
 
             $liveTranslationLanguage = new Language((int)Language::getIdByIso(self::LIVETRANSLATION_ISO));
             $output .= '<div class="form-group">
-                <label class="control-label col-lg-1">'.$this->trans('Front office', array(), 'Admin.Livetranslation.Admin').'</label>
+                <label class="control-label col-lg-1">'.$this->trans('Front office', array(), 'Modules.Livetranslation.Admin').'</label>
                 <div class="col-lg-4">
                     <a class="btn btn-primary btn-sm" 
                         href="'.$this->context->link->getBaseLink($this->context->shop->id).$liveTranslationLanguage->iso_code.'/?live_translation=1" 
-                        title="'.$this->trans('Translate', array(), 'Admin.Livetranslation.Admin').'"
+                        title="'.$this->trans('Translate', array(), 'Modules.Livetranslation.Admin').'"
                         target="_blank">' .
-                    $this->trans('Translate', array(), 'Admin.Livetranslation.Admin') .
+                    $this->trans('Translate', array(), 'Modules.Livetranslation.Admin') .
                     '</a>
                 </div>
             </div></form>';
