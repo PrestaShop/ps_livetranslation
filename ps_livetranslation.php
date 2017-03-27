@@ -53,11 +53,7 @@ class Ps_Livetranslation extends Module
 
         $this->ps_versions_compliancy = array('min' => '1.7.1.0', 'max' => _PS_VERSION_);
 
-        $this->languageIsInstalled = $this->checkIfLanguageIsInstalled();
-
-        if ($this->languageIsInstalled) {
-            $this->checkLiveTranslation();
-        }
+        $this->checkLiveTranslation();
     }
 
     public function install()
@@ -85,8 +81,9 @@ class Ps_Livetranslation extends Module
 
     public function getContent()
     {
-        $output = '<div class="panel">';
+        $this->languageIsInstalled = $this->checkIfLanguageIsInstalled();
 
+        $output = '<div class="panel">';
         $output .= '<div class="alert alert-info">' .
             '<p>'.$this->trans('This module makes it possible to translate PrestaShop directly from its various pages (back and front office).', array(), 'Modules.Livetranslation.Admin').'</p>';
 
@@ -126,6 +123,7 @@ class Ps_Livetranslation extends Module
                 </div>
             </div>';
 
+            Language::loadLanguages();
             $liveTranslationLanguage = new Language((int)Language::getIdByIso(self::LIVETRANSLATION_ISO));
             $output .= '<div class="form-group">
                 <label class="control-label col-lg-1">'.$this->trans('Front office', array(), 'Modules.Livetranslation.Admin').'</label>
