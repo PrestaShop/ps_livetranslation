@@ -2,7 +2,7 @@
 <module>
     <name>ps_livetranslation</name>
     <displayName><![CDATA[Live translation]]></displayName>
-    <version><![CDATA[1.0.2]]></version>
+    <version><![CDATA[1.0.3]]></version>
     <description><![CDATA[Contribute to the translation of PrestaShop directly from your own shop and administration panel.]]></description>
     <author><![CDATA[PrestaShop]]></author>
     <is_configurable>0</is_configurable>

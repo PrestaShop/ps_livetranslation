@@ -42,7 +42,7 @@ class Ps_Livetranslation extends Module
     {
         $this->name = 'ps_livetranslation';
         $this->author = 'PrestaShop';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
         $this->need_instance = 0;
 
         $this->bootstrap = true;
