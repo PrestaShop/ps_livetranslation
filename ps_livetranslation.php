@@ -226,7 +226,7 @@ class Ps_Livetranslation extends Module
             if ($success = Language::downloadAndInstallLanguagePack(self::LIVETRANSLATION_ISO, $version = _PS_VERSION_, $params = null, $install = true)) {
                 Language::loadLanguages();
             } else {
-                $this->_errors['cannot_install'] = $this->trans('Live translation cannot be enabled. The English Upside Down language is missing and cannot be installed. Please reset the module to try again. ', array(), 'Modules.Livetranslation.Admin');
+                $this->_errors['cannot_install'] = $this->trans('Live translation cannot be enabled. The English Upside Down language is missing and cannot be installed. Please reset the module to try again.', array(), 'Modules.Livetranslation.Admin');
                 return false;
             }
         }
