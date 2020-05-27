@@ -42,7 +42,7 @@ class Ps_Livetranslation extends Module
     {
         $this->name = 'ps_livetranslation';
         $this->author = 'PrestaShop';
-        $this->version = '1.0.3';
+        $this->version = '1.0.4';
         $this->need_instance = 0;
 
         $this->bootstrap = true;
@@ -115,8 +115,8 @@ class Ps_Livetranslation extends Module
             $output .= '<form class="form-horizontal"><div class="form-group">
                 <label class="control-label col-lg-1">'.$this->trans('Back office', array(), 'Modules.Livetranslation.Admin').'</label>
                 <div class="col-lg-4">
-                    <a class="btn btn-primary btn-sm" 
-                        href="'.$this->context->link->getAdminLink('AdminModules', true, null, array('configure' => $this->name, 'live_translation' => 1)).'" 
+                    <a class="btn btn-primary btn-sm"
+                        href="'.$this->context->link->getAdminLink('AdminModules', true, null, array('configure' => $this->name, 'live_translation' => 1)).'"
                         title="'.$this->trans('Translate', array(), 'Modules.Livetranslation.Admin').'">' .
                         $this->trans('Translate', array(), 'Modules.Livetranslation.Admin') .
                     '</a>
@@ -128,8 +128,8 @@ class Ps_Livetranslation extends Module
             $output .= '<div class="form-group">
                 <label class="control-label col-lg-1">'.$this->trans('Front office', array(), 'Modules.Livetranslation.Admin').'</label>
                 <div class="col-lg-4">
-                    <a class="btn btn-primary btn-sm" 
-                        href="'.$this->context->link->getBaseLink($this->context->shop->id).$liveTranslationLanguage->iso_code.'/?live_translation=1" 
+                    <a class="btn btn-primary btn-sm"
+                        href="'.$this->context->link->getBaseLink($this->context->shop->id).$liveTranslationLanguage->iso_code.'/?live_translation=1"
                         title="'.$this->trans('Translate', array(), 'Modules.Livetranslation.Admin').'"
                         target="_blank">' .
                     $this->trans('Translate', array(), 'Modules.Livetranslation.Admin') .
