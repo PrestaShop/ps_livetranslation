@@ -28,6 +28,11 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
+$autoloadPath = __DIR__ . '/vendor/autoload.php';
+if (file_exists($autoloadPath)) {
+    require_once $autoloadPath;
+}
+
 class Ps_Livetranslation extends Module
 {
     /** Iso code for fake language in Crowdin */
