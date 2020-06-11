@@ -168,7 +168,18 @@ class Ps_Livetranslation extends Module
     public function hookDisplayHeader($params)
     {
         if ($this->isLiveTranslationActive()) {
-            $this->context->controller->registerJavascript('modules-livetranslation', 'modules/'.$this->name.'/js/livetranslation.js', ['position' => 'bottom', 'priority' => 110]);
+            $this->context->controller->registerJavascript(
+                'modules-livetranslation',
+                'modules/'.$this->name.'/js/livetranslation.js',
+                [
+                    'position' => 'bottom',
+                    'priority' => 110
+                ]
+            );
+            $defaultLanguage = new Language((int)Configuration::get('PS_LANG_DEFAULT'));
+            Media::addJsDef([
+                'urlLiveTranslationEscape' => $this->context->link->getBaseLink($this->context->shop->id).$defaultLanguage->iso_code.'/?disable_live_translation=1',
+            ]);
         }
     }
 
@@ -189,6 +200,17 @@ class Ps_Livetranslation extends Module
     {
         if ($this->isLiveTranslationActive()) {
             $this->context->controller->addJS($this->_path.'js/livetranslation.js', 'all');
+            Media::addJsDef([
+                'urlLiveTranslationEscape' => $this->context->link->getAdminLink(
+                    'AdminModules',
+                    true,
+                    null,
+                    [
+                        'configure' => $this->name,
+                        'disable_live_translation' => 1
+                    ]
+                ),
+            ]);
         }
     }
 
