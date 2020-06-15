@@ -4,7 +4,21 @@
 
 Live translation module with Crowdin integration!
 
-## Contributing
+Contribute to the translation of PrestaShop directly from your own shop and administration panel.
+
+​These translations will be shared with the PrestaShop community as part of the [Crowdin translation project](https://crowdin.com/project/prestashop-official).
+​To translate your theme and shop for your own use, please go to International > Translations instead.
+This module is not meant to help you translate your own shop, but to help with the community translations.
+
+## How to use the module
+
+1. Log in to your Crowdin account
+2. Go to the Live translation module configuration
+3. Click on "Translate" for either back or front office
+4. Translate
+5. Click on "Disable" when you're done translating. Do not forget this last part ^^
+
+## Contributing to PrestaShop
 
 PrestaShop modules are open-source extensions to the PrestaShop e-commerce solution. Everyone is welcome and even encouraged to contribute with their own improvements.
 
